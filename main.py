@@ -1,17 +1,13 @@
+import hydra
 import neptune
+from omegaconf import DictConfig
 
 NEPTUNE_PROJECT_NAME = "markotot/GAIG"
-NEPTUNE_API_TOKEN = (
-    "eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vYXBwLm5lcHR1bmUuYWkiLCJhcGlfdXJsIj"
-    "oiaHR0cHM6Ly9hcHAubmVwdHVuZS5haSIsImFwaV9rZXkiOiI4ODkxZmYyZC1lNzRlLTR"
-    "lMTEtODJiNC1kYzNlNWQ5MWFlNDEifQ=="
-)
 
 
-def run_app():
-    run = neptune.init_run(
-        project=NEPTUNE_PROJECT_NAME, api_token=NEPTUNE_API_TOKEN
-    )  # your credentials
+@hydra.main(version_base=None, config_path="configs", config_name="config")
+def run_app(config: DictConfig) -> None:
+    run = neptune.init_run(project=NEPTUNE_PROJECT_NAME)
 
     params = {"learning_rate": 0.002, "optimizer": "Adam"}
     run["parameters"] = params
