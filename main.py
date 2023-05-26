@@ -1,7 +1,11 @@
 import neptune
 
 NEPTUNE_PROJECT_NAME = "markotot/GAIG"
-NEPTUNE_API_TOKEN = "eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vYXBwLm5lcHR1bmUuYWkiLCJhcGlfdXJsIjoiaHR0cHM6Ly9hcHAubmVwdHVuZS5haSIsImFwaV9rZXkiOiI4ODkxZmYyZC1lNzRlLTRlMTEtODJiNC1kYzNlNWQ5MWFlNDEifQ=="
+NEPTUNE_API_TOKEN = (
+    "eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vYXBwLm5lcHR1bmUuYWkiLCJhcGlfdXJsIj"
+    "oiaHR0cHM6Ly9hcHAubmVwdHVuZS5haSIsImFwaV9rZXkiOiI4ODkxZmYyZC1lNzRlLTR"
+    "lMTEtODJiNC1kYzNlNWQ5MWFlNDEifQ=="
+)
 
 
 def run_app():
