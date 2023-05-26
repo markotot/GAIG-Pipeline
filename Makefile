@@ -22,6 +22,6 @@ docker_remove_container:
 docker_remove_image:
 	sudo docker image rm $(DOCKER_IMAGE_NAME)
 
-.PHONY: docker_remove_all_images
-docker_remove_all_images:
-	sudo docker rmi -f $(sudo docker images -f "dangling=true" -q)
+.PHONY: docker_prune
+docker_prune:
+	sudo docker system prune
