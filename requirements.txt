@@ -1,0 +1,2 @@
+neptune==1.2.0
+pre-commit==3.3.2
