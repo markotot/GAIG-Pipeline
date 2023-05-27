@@ -1,6 +1,9 @@
 GIT_BRANCH = main
 PROJECT_NAME = GAIG-Pipeline
 
+AP_PRIVATE_KEY_PATH = ~/Apocrita/apocrita.ssh
+APOCRITA_USER = acw549
+
 DOCKER_IMAGE_PATH = docker/Dockerfile
 DOCKER_IMAGE_NAME = gaig
 DOCKER_CONTAINER_NAME = gaig_container
@@ -12,10 +15,23 @@ DOCKER_BUILD_ARGS = \
     --build-arg GIT_BRANCH=${GIT_BRANCH} \
     --build-arg PROJECT_NAME=${PROJECT_NAME} \
 
-.PHONY: docker_test
-docker_test:
-	sudo echo $(DOCKER_BUILD_ARGS)
+.PHONE: apocrita_login
+apocrita_login:
+	sudo expect ./scripts/apocrita_login.sh \
+	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH}
 
+
+.PHONY: apocrita_clone_repo
+apocrita_clone_repo:
+	sudo expect ./scripts/apocrita_clone_repo.sh \
+	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH} \
+ 	${GIT_BRANCH} ${GITHUB_USER} ${GITHUB_TOKEN} ${PROJECT_NAME}
+
+.PHONY: apocrita_checkout_branch_repo
+apocrita_checkout_branch_repo:
+	sudo expect ./scripts/apocrita_checkout_branch_repo.sh \
+ 	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH} \
+ 	${GIT_BRANCH} ${PROJECT_NAME}
 
 .PHONY: docker_build
 docker_build:
@@ -36,3 +52,8 @@ docker_remove_image:
 .PHONY: docker_prune
 docker_prune:
 	sudo docker system prune
+
+
+.PHONY: apptainer_build
+apptainer_build:
+	apptainer build test.sif apptainer/test.def

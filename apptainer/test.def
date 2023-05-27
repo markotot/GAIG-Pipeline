@@ -1,0 +1,16 @@
+Bootstrap: docker
+From: python:3.8
+
+
+%post
+    apt-get -y update
+    apt-get -y install git
+
+
+%environment
+    export LC_ALL=C
+    export PATH=/usr/games:$PATH
+
+%runscript
+    git clone -b $GIT_BRANCH https://$GITHUB_USERNAME:$GITHUB_ACCESS_TOKEN@github.com/markotot/$PROJECT_NAME.git
+    python3 test.py
