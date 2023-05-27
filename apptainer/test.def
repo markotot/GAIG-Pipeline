@@ -3,6 +3,6 @@ From: python:3.8
 
 %post
     apt-get -y update
-
+    pip install -r requirements.txt
 %runscript
-    python3 test.py
+    python3 main.py
