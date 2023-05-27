@@ -20,18 +20,22 @@ apocrita_login:
 	sudo expect ./scripts/apocrita_login.sh \
 	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH}
 
-
 .PHONY: apocrita_clone_repo
 apocrita_clone_repo:
 	sudo expect ./scripts/apocrita_clone_repo.sh \
 	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH} \
  	${GIT_BRANCH} ${GITHUB_USER} ${GITHUB_TOKEN} ${PROJECT_NAME}
 
-.PHONY: apocrita_checkout_branch_repo
-apocrita_checkout_branch_repo:
+.PHONY: apocrita_checkout_branch
+apocrita_checkout_branch:
 	sudo expect ./scripts/apocrita_checkout_branch_repo.sh \
  	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH} \
  	${GIT_BRANCH} ${PROJECT_NAME}
+
+.PHONY: apocrita_run_app
+apocrita_run_app:
+	sudo expect ./scripts/apocrita_run_app.sh \
+ 	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH} \
 
 .PHONY: docker_build
 docker_build:
@@ -52,8 +56,3 @@ docker_remove_image:
 .PHONY: docker_prune
 docker_prune:
 	sudo docker system prune
-
-
-.PHONY: apptainer_build
-apptainer_build:
-	apptainer build test.sif apptainer/test.def

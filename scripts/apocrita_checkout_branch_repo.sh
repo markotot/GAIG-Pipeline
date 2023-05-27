@@ -12,7 +12,8 @@ spawn ssh -i $APOC_PRIVATE_KEY $APOC_USERNAME@login.hpc.qmul.ac.uk \
 "cd $PROJECT_NAME; \
  git pull; \
  git checkout $GIT_BRANCH; \
- git pull"
+ git pull; \
+ apptainer build test.sif apptainer/test.def"
 expect "Enter passphrase for key '$APOC_PRIVATE_KEY':"
 send "$APOC_PASSPHRASE\r"
 expect "$APOC_USERNAME@login.hpc.qmul.ac.uk's password"
