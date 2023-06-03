@@ -1,5 +1,7 @@
 Bootstrap: docker
 From: python:3.8
+%setup
+
 
 %files
     requirements.txt requirements.txt
@@ -11,4 +13,6 @@ From: python:3.8
 
 
 %runscript
+    pwd
+    ls
     python3 main.py
