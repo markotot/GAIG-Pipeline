@@ -1,9 +1,7 @@
 GIT_BRANCH = main
 PROJECT_NAME = GAIG-Pipeline
 
-
 #APOCRITA
-
 AP_PRIVATE_KEY_PATH = ~/Apocrita/apocrita.ssh
 APOCRITA_USER = acw549
 
@@ -20,9 +18,9 @@ apocrita_clone_repo:
 
 .PHONY: apocrita_checkout_branch
 apocrita_checkout_branch:
-	sudo expect ./scripts/apocrita_checkout_branch_repo.sh \
+	sudo expect ./scripts/apocrita_checkout_branch.sh \
  	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH} \
- 	${GIT_BRANCH} ${PROJECT_NAME}
+ 	${GIT_BRANCH} ${PROJECT_NAME} ${NEPTUNE_API_TOKEN}
 
 .PHONY: apocrita_run_app
 apocrita_run_app:

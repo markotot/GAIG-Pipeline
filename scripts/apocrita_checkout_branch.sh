@@ -7,13 +7,17 @@ set APOC_PRIVATE_KEY [lindex $argv 3];
 
 set GIT_BRANCH [lindex $argv 4];
 set PROJECT_NAME [lindex $argv 5];
+set NEPTUNE_API_TOKEN [lindex $argv 6];
 
 spawn ssh -i $APOC_PRIVATE_KEY $APOC_USERNAME@login.hpc.qmul.ac.uk \
-"cd $PROJECT_NAME; \
+"
+ export $NEPTUNE_API_TOKEN \
+ cd $PROJECT_NAME; \
  git pull; \
  git checkout $GIT_BRANCH; \
  git pull; \
- apptainer build --force test.sif apptainer/test.def "
+ apptainer build --force test.sif apptainer/test.def \
+"
 expect "Enter passphrase for key '$APOC_PRIVATE_KEY':"
 send "$APOC_PASSPHRASE\r"
 expect "$APOC_USERNAME@login.hpc.qmul.ac.uk's password"
