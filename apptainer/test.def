@@ -4,15 +4,16 @@ From: python:3.8
 
 
 %files
-    requirements.txt requirements.txt
+    ../../GAIG-Pipeline GAIG-Pipeline
 
 %post
+    pwd
     apt-get -y update
     ls
-    pip install -r requirements.txt
+    pip install -r GAIG-Pipeline/requirements.txt
+    cd /data/home/acw549
+    ls
 
 
 %runscript
-    pwd
-    ls
     python3 main.py
