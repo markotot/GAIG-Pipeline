@@ -1,9 +1,14 @@
 Bootstrap: docker
 From: python:3.8
 
+%files
+    requirements.txt requirements.txt
+
 %post
     apt-get -y update
+    ls
     pip install -r requirements.txt
+
 
 %runscript
     python3 main.py
