@@ -7,8 +7,7 @@ set APOC_PRIVATE_KEY [lindex $argv 3];
 
 spawn ssh -i $APOC_PRIVATE_KEY $APOC_USERNAME@login.hpc.qmul.ac.uk \
   "ls; \
-  whereis qsub; \
-  qsub example.sh"
+  source ./run_experiment.sh"
 expect "Enter passphrase for key '$APOC_PRIVATE_KEY':"
 send "$APOC_PASSPHRASE\r"
 expect "$APOC_USERNAME@login.hpc.qmul.ac.uk's password"
