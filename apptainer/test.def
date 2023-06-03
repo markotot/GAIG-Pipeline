@@ -4,7 +4,7 @@ From: python:3.8
 
 
 %files
-    ../../GAIG-Pipeline GAIG-Pipeline
+    ../GAIG-Pipeline GAIG-Pipeline
 
 %post
     pwd
