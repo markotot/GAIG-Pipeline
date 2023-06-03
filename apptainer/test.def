@@ -9,12 +9,7 @@ From: python:3.8
 %post
     pwd
     apt-get -y update
-    ls
     pip install -r GAIG-Pipeline/requirements.txt
-    cd /data/home/acw549
-    ls
-
 
 %runscript
-    cd GAIG-Pipeline
-    python3 main.py
+    python3 GAIG-Pipeline/main.py
