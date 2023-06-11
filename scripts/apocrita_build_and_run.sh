@@ -17,7 +17,10 @@ spawn ssh -i $APOC_PRIVATE_KEY $APOC_USERNAME@login.hpc.qmul.ac.uk \
  git pull; \
  cd ../; \
  source ../../../../../etc/bashrc; \
- export NEPTUNE_API_TOKEN=$NEPTUNE_API_TOKEN; \
+
+ rm myenvs; \
+ echo NEPTUNE_API_TOKEN=$NEPTUNE_API_TOKEN > myenvs; \
+
  apptainer build --force test.sif GAIG-Pipeline/apptainer/test.def; \
  qsub example.sh;
  "
