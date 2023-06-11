@@ -6,7 +6,6 @@
 #$ -j y
 #$ -N Example
 #$ -m beas
-#$ -o job_output
 
 module load python/3.8.5
 
