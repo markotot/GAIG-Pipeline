@@ -8,7 +8,8 @@ APOCRITA_USER = acw549
 .PHONE: apocrita_login
 apocrita_login:
 	sudo expect ./scripts/apocrita_login.sh \
-	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH}
+	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH} \
+	${NEPTUNE_API_TOKEN}
 
 .PHONY: apocrita_clone_repo
 apocrita_clone_repo:
@@ -20,7 +21,7 @@ apocrita_clone_repo:
 apocrita_checkout_branch:
 	sudo expect ./scripts/apocrita_checkout_branch.sh \
  	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH} \
- 	${GIT_BRANCH} ${PROJECT_NAME} ${NEPTUNE_API_TOKEN}
+ 	${GIT_BRANCH} ${PROJECT_NAME}
 
 .PHONY: apocrita_run_app
 apocrita_run_app:
