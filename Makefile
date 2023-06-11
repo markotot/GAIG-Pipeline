@@ -16,12 +16,6 @@ apocrita_clone_repo:
 	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH} \
  	${GIT_BRANCH} ${GITHUB_USER} ${GITHUB_TOKEN} ${PROJECT_NAME}
 
-.PHONY: apocrita_checkout_branch
-apocrita_checkout_branch:
-	sudo expect ./scripts/apocrita_checkout_branch.sh \
- 	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH} \
- 	${GIT_BRANCH} ${PROJECT_NAME}
-
 .PHONY: apocrita_build_and_run
 apocrita_build_and_run:
 	sudo expect ./scripts/apocrita_build_and_run.sh \
