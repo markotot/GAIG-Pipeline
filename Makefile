@@ -22,11 +22,11 @@ apocrita_checkout_branch:
  	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH} \
  	${GIT_BRANCH} ${PROJECT_NAME}
 
-.PHONY: apocrita_run_app
+.PHONY: apocrita_build_and_run
 apocrita_run_app:
-	sudo expect ./scripts/apocrita_run_app.sh \
+	sudo expect ./scripts/apocrita_build_and_run.sh \
  	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH} \
- 	${NEPTUNE_API_TOKEN}
+ 	${GIT_BRANCH} ${PROJECT_NAME} ${NEPTUNE_API_TOKEN}
 
 
 ##DOCKER
