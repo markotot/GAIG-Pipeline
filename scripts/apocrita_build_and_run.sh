@@ -21,8 +21,8 @@ spawn ssh -i $APOC_PRIVATE_KEY $APOC_USERNAME@login.hpc.qmul.ac.uk \
  rm myenvs; \
  echo NEPTUNE_API_TOKEN=$NEPTUNE_API_TOKEN > myenvs; \
 
- apptainer build --force test.sif GAIG-Pipeline/apptainer/test.def; \
- qsub GAIG-Pipeline/scripts/run_job.sh;
+ apptainer build --force gaig-pipeline.sif $PROJECT_NAME/apptainer/gaig-pipeline.def; \
+ qsub $PROJECT_NAME/scripts/run_job.sh;
  "
 expect "Enter passphrase for key '$APOC_PRIVATE_KEY':"
 send "$APOC_PASSPHRASE\r"

@@ -11,4 +11,4 @@
 module load python/3.8.5
 
 # Replace the following line with a program or command
-apptainer run --env-file myenvs test.sif
+apptainer run --env-file myenvs gaig-pipeline.sif
