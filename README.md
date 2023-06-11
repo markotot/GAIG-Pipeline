@@ -6,7 +6,7 @@ Project demonstrating the steps of an AI pipeline for machine learning projects.
 In this tutorial we will go through the process of creating an experiment pipeline for Machine Learning.
 The pipeline will include the following steps:
 -  Use [Hydra](https://hydra.cc/) configuration files to set the hyperparameters
--  Use [Pre-Commit](https://pre-commit.com/) with Github to identify simple issues and enforce a specific coding standard
+-  Use [Pre-Commit](https://pre-commit.com/) with git to identify simple issues and enforce a specific coding standard
 -  Use [Docker](https://www.docker.com/)/[Apptainer](https://apptainer.org/) to create a container including all of the required modules for the project
 -  Use [Makefile](https://www.gnu.org/software/make/manual/make.html) to streamline the cloud server commands for logging to [QMUL Apocrita](https://docs.hpc.qmul.ac.uk/) server and submitting the jobs
 -  Use [Neptune.ai](https://neptune.ai/) to automatically log the experiment metrics
