@@ -10,4 +10,4 @@ From: python:3.8
     pip install -r GAIG-Pipeline/requirements.txt
 
 %runscript
-    python3 GAIG-Pipeline/main.py
+    bash GAIG-Pipeline/scripts/launch_exp.sh

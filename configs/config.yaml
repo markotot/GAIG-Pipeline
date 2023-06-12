@@ -1,2 +1,6 @@
 neptune:
   project_name: "markotot/GAIG"
+training:
+  learning_rate: 1e-4
+  training_steps: 100_000
+  optimizer: "Adam"

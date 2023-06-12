@@ -8,11 +8,15 @@ def run_app(config: DictConfig) -> None:
 
     run = neptune.init_run(project=config.neptune.project_name)
 
-    params = {"learning_rate": 0.002, "optimizer": "Adam"}
+    params = {
+        "learning_rate": config.training.learning_rate,
+        "optimizer": config.training.optimizer,
+    }
+
     run["parameters"] = params
 
-    for epoch in range(10):
-        run["train/loss"].append(0.9**epoch)
+    for step in range(config.training.training_steps):
+        run["train/loss"].append(0.999**step)
 
     run["eval/f1_score"] = 0.66
 
