@@ -1,0 +1,2 @@
+F1 score: 0.66
+Total time: 1h 23m 45s
