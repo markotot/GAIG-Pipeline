@@ -15,7 +15,7 @@ spawn ssh -i $APOC_PRIVATE_KEY $APOC_USERNAME@login.hpc.qmul.ac.uk \
   source ../../../../../etc/bashrc; \
   rm myenvs; \
   echo NEPTUNE_API_TOKEN=$NEPTUNE_API_TOKEN > myenvs; \
-  qsub $PROJECT_NAME/V4.1/submit_run_job.sh ; \
+  qsub $PROJECT_NAME/V5/submit_run_job.sh ; \
  "
 expect "Enter passphrase for key '$APOC_PRIVATE_KEY':"
 send "$APOC_PASSPHRASE\r"

@@ -5,8 +5,9 @@ import neptune
 from omegaconf import DictConfig
 
 
-@hydra.main(version_base=None, config_path=".", config_name="parameters")
+@hydra.main(version_base=None, config_path="", config_name="config")
 def run_app(config: DictConfig) -> None:
+    hydra.output_subdir = "null"
 
     run = neptune.init_run(
         project=config.neptune.project_name,

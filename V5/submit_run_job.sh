@@ -4,8 +4,10 @@
 #$ -l h_rt=1:0:0
 #$ -cwd
 #$ -j y
-#$ -o job_results
+#$ -N Example
+#$ -m beas
 
 module load python/3.8.5
 
-python3 GAIG-Pipeline/V4.1/test.py
+# Replace the following line with a program or command
+apptainer run --env-file myenvs gaig-pipeline.sif
