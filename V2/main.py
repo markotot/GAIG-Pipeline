@@ -8,7 +8,7 @@ from omegaconf import DictConfig
 @hydra.main(
     version_base=None,
     config_path=".",
-    config_name="config",
+    config_name="parameters",
 )
 def run_app(config: DictConfig) -> None:
 
