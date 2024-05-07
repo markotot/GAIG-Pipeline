@@ -1,3 +1,7 @@
+#GIT
+GIT_BRANCH = main
+PROJECT_NAME = GAIG-Pipeline
+
 #APOCRITA
 AP_PRIVATE_KEY_PATH = ~/Apocrita/apocrita.ssh
 APOCRITA_USER = acw549
@@ -18,8 +22,11 @@ apocrita_run:
 	sudo expect ./apocrita_run.sh \
 	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH}
 
-
-
+.SILENT: apocrita_clone_repo
+apocrita_clone_repo:
+	sudo expect ./apocrita_clone_repo.sh \
+	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH} \
+ 	${GIT_BRANCH} ${GITHUB_USER} ${GITHUB_TOKEN} ${PROJECT_NAME}
 
 
 
