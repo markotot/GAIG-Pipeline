@@ -8,4 +8,5 @@
 
 module load python/3.8.5
 
-python3 -m GAIG-Pipeline/V4.1/main.py
+pip install -r GAIG-Pipeline/V4.1/requirements.txt
+python3 GAIG-Pipeline/V4.1/main.py
