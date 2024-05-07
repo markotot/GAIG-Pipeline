@@ -2,7 +2,7 @@ Bootstrap: docker
 From: python:3.8
 
 %files
-    ../../GAIG-Pipeline/V5 ../../GAIG-Pipeline/V5
+    GAIG-Pipeline GAIG-Pipeline
 
 %post
     apt-get -y update
@@ -10,4 +10,4 @@ From: python:3.8
 
 %runscript
     ls
-    bash run_exp.sh
+    bash GAIG-Pipeline/V5/run_exp.sh
