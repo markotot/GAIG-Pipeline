@@ -8,4 +8,4 @@
 
 module load python/3.8.5
 
-python3 main.py
+python3 -m GAIG-Pipeline/V4.1/main.py
