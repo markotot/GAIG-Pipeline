@@ -8,6 +8,11 @@ APOCRITA_USER = acw549
 run_experiment:
 	sudo bash ./run_exp.sh
 
+#.SILENT: apocrita_login
+#apocrita_login:
+	#sudo ssh -i ~/Apocrita/apocrita.ssh acw549@login.hpc.qmul.ac.uk
+
+
 .SILENT: apocrita_login
 apocrita_login:
 	sudo expect ./apocrita_login.sh \
