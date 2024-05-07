@@ -5,6 +5,7 @@
 #$ -cwd
 #$ -j y
 #$ -o job_results
+#$ -n GAIG-Job
 #$ -m beas
 
 module load python/3.8.5
