@@ -9,5 +9,11 @@ From: python:3.8
     pip install -r ../../GAIG-Pipeline/V5/requirements.txt
 
 %runscript
-    ls
-    bash GAIG-Pipeline/V5/run_exp.sh
+
+    cd GAIG-Pipeline
+
+    git pull
+    git checkout main
+    git pull
+
+    bash V5/run_exp.sh
