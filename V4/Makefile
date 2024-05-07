@@ -3,11 +3,6 @@ AP_PRIVATE_KEY_PATH = ~/Apocrita/apocrita.ssh
 APOCRITA_USER = acw549
 
 
-#EXPERIMENT
-.SILENT: run_experiment
-run_experiment:
-	sudo bash ./run_exp.sh
-
 #.SILENT: apocrita_login
 #apocrita_login:
 	#sudo ssh -i ~/Apocrita/apocrita.ssh acw549@login.hpc.qmul.ac.uk
@@ -23,6 +18,10 @@ apocrita_run:
 	sudo expect ./apocrita_run.sh \
 	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH}
 
+.SILENT: apocrita_submit_job
+apocrita_submit_job:
+	sudo expect ./apocrita_submit_job.sh \
+	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH}
 
 
 
