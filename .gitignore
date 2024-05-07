@@ -53,5 +53,8 @@ wheels/
 #hydra
 outputs/
 
+#neptune
+.neptune/
+
 #apptainer
 *.sif

@@ -1,0 +1,13 @@
+Bootstrap: docker
+From: python:3.8
+
+%files
+    ../../GAIG-Pipeline/V4 ../../GAIG-Pipeline/V4
+
+%post
+    apt-get -y update
+    pip install -r ../../GAIG-Pipeline/V4/requirements.txt
+
+%runscript
+    ls
+    bash run_exp.sh

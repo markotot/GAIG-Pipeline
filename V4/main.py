@@ -5,14 +5,16 @@ import neptune
 from omegaconf import DictConfig
 
 
-@hydra.main(
-    version_base=None,
-    config_path=".",
-    config_name="config",
-)
+@hydra.main(version_base=None, config_path="", config_name="config")
 def run_app(config: DictConfig) -> None:
+    hydra.output_subdir = "null"
 
-    run = neptune.init_run(project=config.neptune.project_name)
+    run = neptune.init_run(
+        project=config.neptune.project_name,
+        api_token="eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vYXBwLm5lcHR1bmUuYWkiLCJhcGlfdXJsIjoiaHR0c"
+        "HM6Ly9hcHAubmVwdHVuZS5haSIsImFwaV9rZXkiOiI4ODkxZmYyZC1lNzRlLTRlMTEtODJiNC1kYzNlNWQ5MWFlNDEifQ==",
+        mode="sync",
+    )
 
     params = {
         "learning_rate": config.training.learning_rate,
