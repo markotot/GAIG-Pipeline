@@ -31,7 +31,7 @@ apocrita_clone_repo:
 
 .SILENT: apocrita_build
 apocrita_build:
-	sudo expect ./scripts/apocrita_build.sh \
+	sudo expect ./apocrita_build.sh \
  	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH} \
  	${GIT_BRANCH} ${PROJECT_NAME} ${NEPTUNE_API_TOKEN}
 
