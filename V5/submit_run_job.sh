@@ -4,7 +4,7 @@
 #$ -l h_rt=1:0:0
 #$ -cwd
 #$ -j y
-#$ -N job_results
+#$ -o job_results
 #$ -m beas
 
 module load python/3.8.5

@@ -1,2 +1,2 @@
 ls
-python3 -m main
+python3 -m V5.main
