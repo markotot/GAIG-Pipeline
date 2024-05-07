@@ -20,7 +20,8 @@ apocrita_login:
 .SILENT: apocrita_run
 apocrita_run:
 	sudo expect ./apocrita_run.sh \
-	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH}
+	${APOCRITA_USER} ${APOCRITA_PASSPHRASE} ${APOCRITA_USER_PASSWORD} ${AP_PRIVATE_KEY_PATH}  \
+	${PROJECT_NAME} ${NEPTUNE_API_TOKEN}
 
 .SILENT: apocrita_clone_repo
 apocrita_clone_repo:
