@@ -6,12 +6,6 @@ PROJECT_NAME = GAIG-Pipeline
 AP_PRIVATE_KEY_PATH = ~/Apocrita/apocrita.ssh
 APOCRITA_USER = acw549
 
-
-#EXPERIMENT
-.SILENT: run_experiment
-run_experiment:
-	sudo bash ./run_exp.sh
-
 .SILENT: apocrita_login
 apocrita_login:
 	sudo expect ./apocrita_login.sh \
